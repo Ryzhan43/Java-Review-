@@ -17,15 +17,11 @@ public class GenericTest {
         teachersList.add(new Teacher("Albus", 201));
         teachersList.add(new Teacher("Severus", 202));
 
-        printInfo(studentList);
+        MyUtils.printInfo(studentList);
         System.out.println("/n");
-        printInfo(teachersList);
+        MyUtils.printInfo(teachersList);
+
+        System.out.println(MyUtils.lastItem(teachersList));
     }
 
-    public static <T> void printInfo(List<T> items){
-        for(T i : items){
-            System.out.println(i.toString());
-        }
-        System.out.println(items.size());
-    }
 }
