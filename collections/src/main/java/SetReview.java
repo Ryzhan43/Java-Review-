@@ -10,8 +10,8 @@ public class SetReview {
 
         //Add elements
         studentSet.add(new Student(7," b Ibrahim"));
-        studentSet.add(new Student(8," c Ahmet"));
-        studentSet.add(new Student(9," a Mahbet"));
+        studentSet.add(new Student(8," a Ahmet"));
+        studentSet.add(new Student(9," c Mahbet"));
 
         System.out.println("Testing Set\n" + studentSet);
 
