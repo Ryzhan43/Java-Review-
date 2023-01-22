@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="generics" />
         <module name="collections" />
+        <module name="lambda" />
       </profile>
     </annotationProcessing>
   </component>
