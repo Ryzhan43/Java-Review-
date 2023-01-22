@@ -12,12 +12,17 @@ public class AppleTest {
         appleList.add(new Apple(50,Color.GREEN));
         appleList.add(new Apple(350,Color.GREEN));
 
-        List<Apple> heavyApple = filterApples(appleList, new AppleHeavyPredicate());
-        List<Apple> colorApple = filterApples(appleList, new AppleGreenColorPredicate());
+        ApplePredicate applHeavy =  (Apple apple) -> apple.getWeight()>200;
+        ApplePredicate applColor = (Apple apple) -> apple.getColor().equals(Color.GREEN);
+
+
+        List<Apple> heavyApple = filterApples(appleList, applHeavy);
+        List<Apple> colorApple = filterApples(appleList,applColor);
         System.out.println(heavyApple);
         System.out.println(colorApple);
 
-        prettyPrintApple(appleList, new AppleGreenColorPredicate());
+
+//        prettyPrintApple(appleList, new AppleGreenColorPredicate());
     }
 
     private static List<Apple> filterApples(List<Apple> appleList, ApplePredicate applePredicate) {
@@ -29,8 +34,8 @@ public class AppleTest {
         return resault;
     }
 
-    private static void prettyPrintApple(List<Apple> appleList, ApplePredicate applePredicate){
-        for(Apple apple : appleList) System.out.println(applePredicate.print(apple));
-    }
+//    private static void prettyPrintApple(List<Apple> appleList, ApplePredicate applePredicate){
+//        for(Apple apple : appleList) System.out.println(applePredicate.print(apple));
+//    }
 
 }
