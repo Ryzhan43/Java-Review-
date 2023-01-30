@@ -1,6 +1,7 @@
 package doublecolomnoperator;
 
 import java.util.function.BiFunction;
+import java.util.function.Consumer;
 
 public class Test {
 
@@ -29,6 +30,8 @@ public class Test {
         BiFunction<String, Integer, String> fn2 = String::substring;
         System.out.println(fn2.apply("Developer", 6));
 
+        Consumer<Integer> display2 = System.out::println;
+        display2.accept(50);
 
 
     }
