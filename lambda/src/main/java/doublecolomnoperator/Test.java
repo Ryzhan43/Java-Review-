@@ -33,7 +33,7 @@ public class Test {
         Consumer<Integer> display2 = System.out::println;
         display2.accept(50);
 
+        BiFunction< MyClass, Integer, Double> v2 = MyClass::method;
 
     }
-
 }

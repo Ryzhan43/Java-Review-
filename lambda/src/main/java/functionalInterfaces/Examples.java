@@ -37,6 +37,8 @@ public class Examples {
         //*********************** SUPPLIER *******************//
         Supplier<Integer> randomValue = () -> (int)(Math.random()*1000);
         System.out.println(randomValue.get());
+
+
     }
 
 
