@@ -42,7 +42,7 @@ public class Test {
                 .map(transaction -> transaction.getTrader().getName())
                 .distinct()
                 .sorted()
-                        .reduce((a,b) -> a + " " + b);
+                .reduce((a,b) -> a + " " + b);
         System.out.println(allTradersNamesSorted.get());
 
         //5. Any traders based in Milan
@@ -87,6 +87,17 @@ public class Test {
                 .stream()
                 .filter(transaction -> transaction.getValue()==smallestTransactionValue.get())
                 .forEach(System.out::println);
+
+        Optional<Transaction> smallval = TransactionsData.getAll().stream()
+                .reduce((t1,t2) -> t1.getValue()<t2.getValue() ? t1 : t2);
+        System.out.println(smallval);
+
+        //SHORTCUT
+        System.out.println(TransactionsData.getAll().stream().min(comparing(Transaction::getValue)));
+
+
+
     }
+
 
 }
