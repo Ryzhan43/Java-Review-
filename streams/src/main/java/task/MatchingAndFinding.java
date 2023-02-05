@@ -1,9 +1,9 @@
 package task;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class MatchingAndFinding {
     public static void main(String[] args) {
@@ -43,7 +43,7 @@ public class MatchingAndFinding {
         list3.stream().reduce(0,(a,b) -> a+b).toString().transform(System.out::printf);
 
         //REDUCE
-        "************ REDUCE - NO INITIAL VALUE************\n".transform(System.out::printf);
+        "**** ******** REDUCE - NO INITIAL VALUE************\n".transform(System.out::printf);
         Optional<Integer> result =  list3.stream().reduce((a,b) -> a+b);
         result.stream().forEach(System.out::println);
 
@@ -61,7 +61,11 @@ public class MatchingAndFinding {
         System.out.println("Max Integer = " + maxInteger.get());
         System.out.println("Sum = " + sumInt.get());
 
+        //TASK - Count dishes using .map() and .reduce()
+        System.out.println("Task: Count dishes using .map() and .reduce()");
+        Integer sumel = DishData.getAll().map(dish1 -> 1).reduce(0,(a, b) -> a + b);
 
+        System.out.println(sumel);
 
     }
 
